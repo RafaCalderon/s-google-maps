@@ -1,0 +1,43 @@
+{
+  "name": "s-google-maps",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "types": "src/typings/index.d.ts",
+  "files": [
+    "dist/index.css",
+    "dist/*.{js,cjs,mjs}",
+    "src/typings/*.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/typings/index.d.ts",
+      "import": "./dist/s-google-maps.js",
+      "require": "./dist/s-google-maps.cjs"
+    },
+    "./dist/index.css": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.0.3",
+    "@tsconfig/svelte": "^4.0.1",
+    "@types/google.maps": "^3.53.2",
+    "@types/node": "^20.4.4",
+    "svelte": "^3.57.0",
+    "svelte-check": "^2.10.3",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2"
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.15.2"
+  }
+}
