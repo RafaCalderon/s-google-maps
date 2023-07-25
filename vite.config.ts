@@ -4,24 +4,13 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    svelte({
-      exclude: /\.wc\.svelte$/ as any,
-      compilerOptions: {
-        customElement: false
-      }
-    }),
-    svelte({
-      include: /\.wc\.svelte$/ as any,
-    }),
-  ],
+  plugins: [svelte()],
   resolve: {
     alias: {
       $lib: path.resolve('./src/lib'),
     }
   },
   build: {
-    cssCodeSplit: true,
     lib: {
       formats: ["es", "cjs"],
       name: 'SGoogleMaps',
