@@ -17,12 +17,5 @@ export default defineConfig({
       entry: "./src/index.ts",
       fileName: 's-google-maps',
     },
-    rollupOptions: {
-      output: {
-        inlineDynamicImports: false,
-        chunkFileNames: "[name].js",
-        manualChunks: { 'svelte': ["svelte"] }
-      },
-    },
   },
 })
