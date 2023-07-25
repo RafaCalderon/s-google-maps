@@ -4,7 +4,17 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte()],
+  plugins: [
+    svelte({
+      exclude: /\.wc\.svelte$/ as any,
+      compilerOptions: {
+        customElement: false
+      }
+    }),
+    svelte({
+      include: /\.wc\.svelte$/ as any,
+    }),
+  ],
   resolve: {
     alias: {
       $lib: path.resolve('./src/lib'),
@@ -19,13 +29,10 @@ export default defineConfig({
       fileName: 's-google-maps',
     },
     rollupOptions: {
-      external: [
-        "svelte",
-      ],
       output: {
-        globals: {
-          svelte: "Svelte",
-        },
+        inlineDynamicImports: false,
+        chunkFileNames: "[name].js",
+        manualChunks: { 'svelte': ["svelte"] }
       },
     },
   },
