@@ -15,7 +15,7 @@
       "svelte": "./src/index.ts"
     },
     "./gmapLoader": {
-      "svelte": "./src/lib/gmapLoader.ts"
+      "svelte": "./src/lib/stores/gmapLoader.ts"
     },
     "./SGoogleMap":{
       "svelte": "./src/lib/components/SGoogleMap.svelte"
