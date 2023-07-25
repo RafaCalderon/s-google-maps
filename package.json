@@ -12,12 +12,13 @@
   "exports": {
     ".": {
       "types": "./src/typings/index.d.ts",
-      "import": "./dist/s-google-maps.js",
-      "require": "./dist/s-google-maps.cjs"
+      "svelte": "./src/index.ts"
     },
-    "./dist/index.css": {
-      "import": "./dist/index.css",
-      "require": "./dist/index.css"
+    "./gmapLoader": {
+      "svelte": "./src/lib/gmapLoader.ts"
+    },
+    "./SGoogleMap":{
+      "svelte": "./src/lib/components/SGoogleMap.svelte"
     }
   },
   "scripts": {
