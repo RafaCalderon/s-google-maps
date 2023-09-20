@@ -1,9 +1,9 @@
 <script lang="ts">
   // Svelte
-  import {getContext, onDestroy, createEventDispatcher} from "svelte";
+  import { getContext, onDestroy, createEventDispatcher } from "svelte";
 
   // GmapApi
-  import {gmapApi} from "$lib/stores/gmapLoader";
+  import { gmap } from "$lib/stores/googleMaps";
 
   // Props
 
@@ -12,20 +12,23 @@
 
   // Context
 
-  const {getMap} = getContext<{ getMap: () => google.maps.Map }>("map");
+  const { getMap } = getContext<{ getMap: () => google.maps.Map }>("map");
 
   // Data
 
   const map = getMap();
   const dispatch = createEventDispatcher();
-  const polygon = new gmapApi.maps.Polygon({
+  const polygon = new gmap.Polygon({
     map: map,
   });
 
   // Listeners
 
   const mouseupListener = polygon.addListener("mouseup", () => {
-    path = polygon.getPath().getArray().map(position => position.toJSON());
+    path = polygon
+      .getPath()
+      .getArray()
+      .map((position) => position.toJSON());
   });
 
   const clickListener = polygon.addListener("click", (ev: google.maps.MapMouseEvent) => {

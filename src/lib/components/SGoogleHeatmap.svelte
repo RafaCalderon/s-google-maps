@@ -1,9 +1,9 @@
 <script lang="ts">
   // Svelte
-  import {getContext, onDestroy} from "svelte";
+  import { getContext, onDestroy } from "svelte";
 
   // GmapApi
-  import {gmapApi} from "$lib/stores/gmapLoader";
+  import { gmap } from "$lib/stores/googleMaps";
 
   // Props
 
@@ -11,12 +11,12 @@
 
   // Context
 
-  const {getMap} = getContext<{ getMap: () => google.maps.Map }>("map");
+  const { getMap } = getContext<{ getMap: () => google.maps.Map }>("map");
 
   // Data
 
   const map = getMap();
-  const heatmap = new gmapApi.maps.visualization.HeatmapLayer({
+  const heatmap = new gmap.visualization.HeatmapLayer({
     map: map,
   });
 

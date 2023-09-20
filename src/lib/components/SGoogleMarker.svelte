@@ -1,11 +1,9 @@
-<slot/>
-
 <script lang="ts">
   // Svelte
-  import {getContext, onDestroy, createEventDispatcher, setContext} from "svelte";
+  import { getContext, onDestroy, createEventDispatcher, setContext } from "svelte";
 
   // GmapApi
-  import {gmapApi} from "$lib/stores/gmapLoader";
+  import { gmap } from "$lib/stores/googleMaps";
 
   // Props
 
@@ -14,7 +12,7 @@
 
   // Context
 
-  const {getMap} = getContext<{ getMap: () => google.maps.Map }>("map");
+  const { getMap } = getContext<{ getMap: () => google.maps.Map }>("map");
   setContext("marker", {
     getMarker: () => marker,
   });
@@ -23,7 +21,7 @@
 
   const map = getMap();
   const dispatch = createEventDispatcher();
-  const marker = new gmapApi.maps.Marker({
+  const marker = new gmap.Marker({
     map: map,
   });
 
@@ -52,3 +50,5 @@
     mouseupListener.remove();
   });
 </script>
+
+<slot />

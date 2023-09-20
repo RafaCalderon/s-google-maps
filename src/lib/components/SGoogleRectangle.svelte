@@ -1,9 +1,9 @@
 <script lang="ts">
   // Svelte
-  import {getContext, onDestroy, createEventDispatcher} from "svelte";
+  import { getContext, onDestroy, createEventDispatcher } from "svelte";
 
   // GmapApi
-  import {gmapApi} from "$lib/stores/gmapLoader";
+  import { gmap } from "$lib/stores/googleMaps";
 
   // Props
 
@@ -12,13 +12,13 @@
 
   // Context
 
-  const {getMap} = getContext<{ getMap: () => google.maps.Map }>("map");
+  const { getMap } = getContext<{ getMap: () => google.maps.Map }>("map");
 
   // Data
 
   const map = getMap();
   const dispatch = createEventDispatcher();
-  const rectangle = new gmapApi.maps.Rectangle({
+  const rectangle = new gmap.Rectangle({
     map: map,
   });
 

@@ -1,23 +1,9 @@
-<div
-  style={wrapperStyle}
-  class="s-google-map__wrapper"
->
-  <div
-    bind:this={mapDiv}
-    style={containerStyle}
-    class="s-google-map__container"
-  ></div>
-  {#if mounted}
-    <slot/>
-  {/if}
-</div>
-
 <script lang="ts">
   // Svelte
-  import {onMount, setContext, createEventDispatcher, onDestroy} from "svelte";
+  import { onMount, setContext, createEventDispatcher, onDestroy } from "svelte";
 
   // GmapApi
-  import {gmapApi} from "$lib/stores/gmapLoader";
+  import { gmap } from "$lib/stores/googleMaps";
 
   // Props
 
@@ -25,7 +11,7 @@
   export let height: string;
   export let borderRadius = "0";
   export let zoom: number | null = null;
-  export let options: google.maps.MapOptions;
+  export let options: google.maps.MapOptions = null;
   export let center: google.maps.LatLngLiteral | null = null;
 
   // Context
@@ -47,8 +33,8 @@
   // Mounted
 
   onMount(() => {
-    if (!mapDiv || !gmapApi) return;
-    map = new gmapApi.maps.Map(mapDiv);
+    if (!mapDiv || !gmap) return;
+    map = new gmap.Map(mapDiv);
     clickListener = map.addListener("click", (ev: google.maps.MapMouseEvent) => {
       dispatch("click", ev);
     });
@@ -80,6 +66,20 @@
     if (zoomChangedListener) zoomChangedListener.remove();
   });
 </script>
+
+<div
+  style={wrapperStyle}
+  class="s-google-map__wrapper"
+>
+  <div
+    bind:this={mapDiv}
+    style={containerStyle}
+    class="s-google-map__container"
+  />
+  {#if mounted}
+    <slot />
+  {/if}
+</div>
 
 <style>
   .s-google-map__container {

@@ -1,21 +1,12 @@
-import path from 'path'
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import path from "path";
+import { defineConfig } from "vite";
+import { sveltekit } from "@sveltejs/kit/vite";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte()],
-  resolve: {
-    alias: {
-      $lib: path.resolve('./src/lib'),
-    }
-  },
-  build: {
-    lib: {
-      formats: ["es", "cjs"],
-      name: 'SGoogleMaps',
-      entry: "./src/index.ts",
-      fileName: 's-google-maps',
-    },
-  },
-})
+	plugins: [sveltekit()],
+	resolve: {
+		alias: {
+			$lib: path.resolve("./src/lib"),
+		},
+	},
+});

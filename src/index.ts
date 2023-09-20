@@ -1,9 +1,0 @@
-export {default as gmapLoader} from "$lib/stores/gmapLoader";
-export {default as SGoogleMap} from "$lib/components/SGoogleMap.svelte";
-export {default as SGoogleCircle} from "$lib/components/SGoogleCircle.svelte";
-export {default as SGoogleMarker} from "$lib/components/SGoogleMarker.svelte";
-export {default as SGoogleHeatmap} from "$lib/components/SGoogleHeatmap.svelte";
-export {default as SGooglePolygon} from "$lib/components/SGooglePolygon.svelte";
-export {default as SGooglePolyline} from "$lib/components/SGooglePolyline.svelte";
-export {default as SGoogleRectangle} from "$lib/components/SGoogleRectangle.svelte";
-export {default as SGoogleInfoWindow} from "$lib/components/SGoogleInfoWindow.svelte";
