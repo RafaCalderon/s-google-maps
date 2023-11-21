@@ -19,7 +19,7 @@
 
   const map = getMap();
   const dispatch = createEventDispatcher();
-  const circle = new gmap.Circle({
+  const circle = new $gmap.Circle({
     map: map,
   });
 

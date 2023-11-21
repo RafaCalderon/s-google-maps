@@ -16,7 +16,7 @@
   // Data
 
   const map = getMap();
-  const heatmap = new gmap.visualization.HeatmapLayer({
+  const heatmap = new $gmap.visualization.HeatmapLayer({
     map: map,
   });
 

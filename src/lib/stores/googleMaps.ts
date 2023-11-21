@@ -1,14 +1,18 @@
+// Stores
+import { get, writable } from "svelte/store";
+
+// Google Maps
 import { type Libraries, Loader } from "@googlemaps/js-api-loader";
 
-export let gmap: typeof google.maps | null = null;
+export const gmap = writable<typeof google.maps | null>(null);
 
 export async function load(apiKey: string, libraries: Libraries = []) {
-  if (gmap) return;
+  if (get(gmap)) return;
   const loader = new Loader({
     apiKey,
     libraries,
   });
-  gmap = (await loader.load()).maps;
+  gmap.set((await loader.load()).maps);
 }
 
 export default {

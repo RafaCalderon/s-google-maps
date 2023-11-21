@@ -33,8 +33,8 @@
   // Mounted
 
   onMount(() => {
-    if (!mapDiv || !gmap) return;
-    map = new gmap.Map(mapDiv);
+    if (!mapDiv || !$gmap) return;
+    map = new $gmap.Map(mapDiv);
     clickListener = map.addListener("click", (ev: google.maps.MapMouseEvent) => {
       dispatch("click", ev);
     });

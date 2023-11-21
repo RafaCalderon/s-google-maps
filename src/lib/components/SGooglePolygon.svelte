@@ -18,7 +18,7 @@
 
   const map = getMap();
   const dispatch = createEventDispatcher();
-  const polygon = new gmap.Polygon({
+  const polygon = new $gmap.Polygon({
     map: map,
   });
 

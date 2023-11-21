@@ -18,8 +18,8 @@
 
   const map = getMap();
   const dispatch = createEventDispatcher();
-  const rectangle = new gmap.Rectangle({
-    map: map,
+  const rectangle = new $gmap.Rectangle({
+    map: map
   });
 
   // Listeners

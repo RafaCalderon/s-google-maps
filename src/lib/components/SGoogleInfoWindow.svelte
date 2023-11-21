@@ -20,7 +20,7 @@
   const map = getMap();
   const marker = markerContext?.getMarker() ?? null;
   let infoWindowContent: HTMLDivElement | null = null;
-  const infoWindow = new gmap.InfoWindow();
+  const infoWindow = new $gmap.InfoWindow();
 
   // Mounted
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import SGoogleMap from "$lib/components/SGoogleMap.svelte";
-  import { load } from "$lib/stores/googleMaps.js";
+  import { load, gmap } from "$lib/stores/googleMaps.js";
   import SGoogleMarker from "$lib/components/SGoogleMarker.svelte";
 
   const options: google.maps.MapOptions = {
@@ -10,7 +10,7 @@
   let position = { lat: -35.433715, lng: -71.67624 };
 </script>
 
-{JSON.stringify(position)}
+{JSON.stringify($gmap)}
 {#await load("")}
   Cargando mapa
 {:then _}

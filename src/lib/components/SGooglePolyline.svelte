@@ -18,7 +18,7 @@
 
   const map = getMap();
   const dispatch = createEventDispatcher();
-  const polyline = new gmap.Polyline({
+  const polyline = new $gmap.Polyline({
     map: map,
   });
 

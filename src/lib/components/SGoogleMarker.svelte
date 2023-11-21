@@ -21,7 +21,7 @@
 
   const map = getMap();
   const dispatch = createEventDispatcher();
-  const marker = new gmap.Marker({
+  const marker = new $gmap.Marker({
     map: map,
   });
 
