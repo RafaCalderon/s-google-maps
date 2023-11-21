@@ -4,6 +4,6 @@ export declare let gmap: typeof google.maps | null;
 export declare function load(apiKey: string, libraries?: Libraries): Promise<void>;
 declare const _default: {
     load: typeof load;
-    gmap: null;
+    gmap: typeof google.maps | null;
 };
 export default _default;
