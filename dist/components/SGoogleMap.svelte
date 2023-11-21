@@ -17,9 +17,9 @@ let clickListener = null;
 let dragEndListener = null;
 let zoomChangedListener = null;
 onMount(() => {
-  if (!mapDiv || !gmap)
+  if (!mapDiv || !$gmap)
     return;
-  map = new gmap.Map(mapDiv);
+  map = new $gmap.Map(mapDiv);
   clickListener = map.addListener("click", (ev) => {
     dispatch("click", ev);
   });

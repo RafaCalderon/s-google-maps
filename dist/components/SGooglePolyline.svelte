@@ -5,7 +5,7 @@ export let options = null;
 const { getMap } = getContext("map");
 const map = getMap();
 const dispatch = createEventDispatcher();
-const polyline = new gmap.Polyline({
+const polyline = new $gmap.Polyline({
   map
 });
 const mouseupListener = polyline.addListener("mouseup", () => {

@@ -5,7 +5,7 @@ export let bounds = null;
 const { getMap } = getContext("map");
 const map = getMap();
 const dispatch = createEventDispatcher();
-const rectangle = new gmap.Rectangle({
+const rectangle = new $gmap.Rectangle({
   map
 });
 const boundsChangedListener = rectangle.addListener("bounds_changed", () => {

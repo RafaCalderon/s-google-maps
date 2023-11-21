@@ -3,7 +3,7 @@ import { gmap } from "../stores/googleMaps";
 export let options = null;
 const { getMap } = getContext("map");
 const map = getMap();
-const heatmap = new gmap.visualization.HeatmapLayer({
+const heatmap = new $gmap.visualization.HeatmapLayer({
   map
 });
 $: {

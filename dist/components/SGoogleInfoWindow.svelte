@@ -7,7 +7,7 @@ const markerContext = getContext("marker");
 const map = getMap();
 const marker = markerContext?.getMarker() ?? null;
 let infoWindowContent = null;
-const infoWindow = new gmap.InfoWindow();
+const infoWindow = new $gmap.InfoWindow();
 onMount(() => {
   infoWindow.setContent(infoWindowContent);
 });

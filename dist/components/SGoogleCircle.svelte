@@ -6,7 +6,7 @@ export let options = null;
 const { getMap } = getContext("map");
 const map = getMap();
 const dispatch = createEventDispatcher();
-const circle = new gmap.Circle({
+const circle = new $gmap.Circle({
   map
 });
 const radiusChangedListener = circle.addListener("radius_changed", () => {

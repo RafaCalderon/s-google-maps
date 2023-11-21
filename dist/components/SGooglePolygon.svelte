@@ -5,7 +5,7 @@ export let options = null;
 const { getMap } = getContext("map");
 const map = getMap();
 const dispatch = createEventDispatcher();
-const polygon = new gmap.Polygon({
+const polygon = new $gmap.Polygon({
   map
 });
 const mouseupListener = polygon.addListener("mouseup", () => {
